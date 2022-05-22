@@ -12,6 +12,7 @@ const Product = () => {
         }
     return (
         <div className='container py-5'>
+            <h2 className='product-title'>Product</h2>
             <div className='row g-4'>
                 {
                 products?.map(product=><GetProduct
