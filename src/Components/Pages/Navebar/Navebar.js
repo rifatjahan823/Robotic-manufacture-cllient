@@ -1,9 +1,12 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobe,faEnvelope,faPhone} from '@fortawesome/free-solid-svg-icons';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { useAuthState} from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import './Navebar.css'
 
 const Navebar = () => {
     const [user]=useAuthState(auth);
@@ -11,9 +14,48 @@ const Navebar = () => {
       signOut(auth);
     };
     return (
-        <div>
+        <>
+        <div className='top-navebar'>
+         <div className=' container'>
+              <div className='row align-items-center'>
+                  <div className='col-md-8'>
+                      <div className='row align-items-center'>
+                          <div className='col-md-5'>
+                              <p><FontAwesomeIcon icon={faGlobe} /> We work with global Industry</p>
+                          </div>
+                          <div className='col-md-3'>
+                             <p><FontAwesomeIcon icon={faEnvelope} /> hello@robtic.com</p> 
+                          </div>
+                          <div className='col-md-4'>
+                             <p><FontAwesomeIcon icon={faPhone} /> 882-658-506</p> 
+                          </div>
+                      </div>
+                  </div>
+                  <div className='col-md-4'> 
+                      <div className='now'>
+                         <div className='col-md-3'>
+             
+                         </div>
+                         <div className='col-md-3'>
+                     
+                         </div>
+                         <div className='col-md-3'>
+
+                         </div>
+                         <div className='col-md-3'>
+
+                         </div>
+                      </div>
+                  </div>
+              </div>
+         </div>   
+         </div>   
+
          <Navbar collapseOnSelect expand="lg" sticky="top"className='bg'>
-          <Container>
+          <Container> 
+            <Navbar.Brand as={Link} to="/">
+            hhh
+         </Navbar.Brand>
          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
              <Nav className="mx-auto">
@@ -43,7 +85,7 @@ const Navebar = () => {
             </Navbar.Collapse>
           </Container>
         </Navbar>
-        </div>
+      </>
     );
 };
 
