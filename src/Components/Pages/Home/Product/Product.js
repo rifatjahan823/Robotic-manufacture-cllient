@@ -5,7 +5,7 @@ import GetProduct from './GetProduct/GetProduct';
 
 const Product = () => {
         //use react query
-        const {data:products,isLoading}=useQuery(('products'),()=> fetch(`product.json`)
+        const {data:products,isLoading}=useQuery(('products'),()=> fetch(`http://localhost:5000/product`)
         .then(res=>res.json()))
         if(isLoading){
             return<Loading></Loading>

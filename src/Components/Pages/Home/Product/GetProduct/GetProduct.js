@@ -2,9 +2,14 @@ import React from 'react';
 import './GetProduct.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleRight} from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 const GetProduct = ({product}) => {
-    const{picture,name,minimumOrder,price,quantity,description}=product
+    const{picture,name,minimumOrder,price,quantity,description,_id}=product;
+    const navigate = useNavigate();
+    const order=()=>{
+     navigate(`order/${_id}`)
+    }
     return (
         <div className='card-group col-lg-4 col-md-6 col-sm-12'>
             <div className='getProduct border px-3'>
@@ -19,7 +24,7 @@ const GetProduct = ({product}) => {
                 </div>
                 <p className=' pb-3 description'>{description?.slice(0,130)}.....</p>
                 <div className='text-center'>
-                <button className='common-button'>
+                <button onClick={order} className='common-button'>
                 Buy Now <FontAwesomeIcon icon={faAngleDoubleRight} />
                 </button>
                 </div>
