@@ -7,5 +7,21 @@
  
 }
 .review{
-    padding: 30px 0;
+    padding: 100px 0;
+    position: absolute;
+    background-color: black;
+    z-index: -10;
+}
+.review h3{
+    color: #fa5f0b;
+    font-weight: 500;
+    font-size: 17px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+.review h2{
+    font-weight: 600;
+    font-size: 38px;
+    text-transform: capitalize;
+    margin-bottom: 5%;
 }

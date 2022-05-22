@@ -42,7 +42,7 @@ const Footer = () => {
                         </div>
                         </div>
                         <div className='col-12 col-lg-3 col-md-6'>
-                        <div className='ps-md-5'>  
+                        <div className='ps-lg-5'>  
                             <h2 className='title'>Useful Links</h2>
                             <ul className='list-unstyled pages'>
                         <Link className='text-decoration-none' to="/"> <li ><FontAwesomeIcon icon={faAngleDoubleRight}></FontAwesomeIcon> Home</li></Link>
@@ -53,15 +53,17 @@ const Footer = () => {
                         </div>
                         </div>
                         <div className='col-12 col-lg-3 col-md-6'>
+                         <div className='ps-md-5 ps-lg-0 ps-0'>   
                             <h2 className='title'>Newsletter</h2>
                             <p>We support to customize minor request as javascript conflict, css issue, etc. Enjoy the ultimate web design themes. Every layout is super flexible, amazingly powerful and visual by nature.</p>
+                        </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div className='footer-bottom'>
                 <div className='container'>
-                    <p>Copyright &copy;2021 Robtic. Designed By EnvyTheme</p>
+                    <p>Copyright &copy;2021 Robtic.Rifat Jahan for Robotic Manufacturers</p>
                 </div>
             </div>
          </div>

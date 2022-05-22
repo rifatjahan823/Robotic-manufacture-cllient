@@ -9,7 +9,17 @@
     opacity: .75;
     z-index: -10;
   }
-
+.banner-area h1{
+  font-size: 58px;
+  color: #ffffff;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+.banner-area p{
+  font-weight: 500;
+  font-size: 19px;
+  margin-bottom: 30px;
+}
   .img{
     position: relative;
     top: 30px;
