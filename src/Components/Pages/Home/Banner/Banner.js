@@ -1,6 +1,8 @@
 import React from 'react';
 import bg from '../../../image/home-page-img/banner-bg.jpg'
-import robot from '../../../image/home-page-img/banner-main.png'
+import robot from '../../../image/home-page-img/banner-main.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDoubleRight} from '@fortawesome/free-solid-svg-icons';
 import './Banner.css'
 const Banner = () => {
     return (
@@ -12,7 +14,9 @@ const Banner = () => {
                 <div className='col-12 col-md-8 '>
                     <h1>We Are The Best Robotic Maker Industry </h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendis</p>
-                    <button>Discover More</button>
+                    <button className='common-button'>
+                     discover More <FontAwesomeIcon icon={faAngleDoubleRight} />
+                    </button> 
                 </div>
                 <div className='col-12 col-md-4 '>
                     <div className='img '>
