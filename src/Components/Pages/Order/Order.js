@@ -20,14 +20,12 @@ const Order = () => {
     const[name,setName]=useState('');
     const[phone,setPhone]=useState('');
     const[address,setAddress]=useState('');
-    const[quantit,setQuantity]=useState('');
+    const[quantiti,setQuantity]=useState('');
 
-    let price = quantit*product?.price;
-    // const result=()=>{
-    //     if(quantity>product.minimumOrder || quantity===product.minimumOrder ){
-    //         toast('Thanks for');
-    //     }
-    // }
+    let price = quantiti*product?.price;
+    //  const result=()=>{
+    //         toast('Thanks for buy');
+    //  }
     const handleName =(event)=>{
         setName(event.target.value)
     };
@@ -40,17 +38,41 @@ const Order = () => {
     const HandleQuantity=(event)=>{
         setQuantity(event.target.value)
     }
+    //----------hadle-form----------------
     const loginHandle =event=>{
         event.preventDefault();
-        const info={email,name,phone,address,quantit,price}
-        console.log(info)
+        const info={email,name,phone,address,quantiti,price};
+       //----------for backed order information------------- 
+       const order= {
+        orderID:Id,
+        userEmail:user.email,
+        userName:user.displayName,
+        phone,
+        address,
+        quantiti,
+        price
+    }
+    console.log(order)
+       fetch('http://localhost:5000/order',{
+        method:'POST',
+        headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(order)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+        if(data){
+            toast(`Your order is complete`)
+        }
+        refetch()
+        })
     }
 
-//-------------------------------------------
-//-------------------------------------------
+//---------------upadate quantity----------------------------
 const updateDeliver =()=>{
-    const quantity = product.quantity-quantit;
-    console.log(quantity)
+        const quantity = product.quantity-quantiti;
+  
 try{
     const getdata = async ()=>{
     const res =await axios.put(`http://localhost:5000/inventoryUpdate/${Id}`,
@@ -99,7 +121,6 @@ catch(error){
       {
         <p style={{color:"black",fontWeight: "600"}}><span style={{fontSize:"14px",fontWeight: "700",color:"#8b8b8b",lineHeight:"1.2"}}>MinimumOrder:</span> {product.minimumOrder}</p>
       } 
-      <button onClick={updateDeliver}>update</button>
       <div className='border p-2'>
         <Form onClick={updateDeliver} onSubmit={loginHandle}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -125,12 +146,17 @@ catch(error){
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Price</Form.Label>
-                <Form.Control  type="number" placeholder="price" value={price} required/>
+                <Form.Control  type="number" placeholder="price" readOnly value={price} required/>
             </Form.Group>
-         
-            <Button className='w-75 mx-auto d-block mb-2' variant="success " type="submit">
+             {quantiti<product.minimumOrder || quantiti>product.quantity?
+                <Button disabled className='w-75 mx-auto d-block mb-2' variant="success " type="submit">
                 Check Out
-            </Button>
+                </Button>
+                :
+                <Button  className='w-75 mx-auto d-block mb-2' variant="success " type="submit">
+                Check Out
+                </Button>
+            }
         </Form>
         </div>
         <ToastContainer />
