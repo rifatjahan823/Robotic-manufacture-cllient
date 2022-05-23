@@ -57,7 +57,7 @@ const Navebar = () => {
           <Container> 
             <Navbar.Brand as={Link} to="/">
             <img className='img-fluid d-none d-lg-block' src={logo} alt="" />
-            <img className='img-fluid d-none d-lg-none d-md-block d-sm-block' src={logo2} alt="" />
+            <img className='img-fluid d-block d-lg-none d-md-block d-sm-block' src={logo2} alt="" />
          </Navbar.Brand>
          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
@@ -67,9 +67,7 @@ const Navebar = () => {
                 {/* //jodi user thake */}
              {
                user && <>
-               <Nav.Link as={Link} to="/addinventory">Addinventory</Nav.Link>
-               <Nav.Link as={Link} to="/mannageinventory">MannageInventory</Nav.Link>
-               <Nav.Link as={Link} to="/myinventory">MyInventory</Nav.Link>
+               <Nav.Link as={Link} to="/dashboard">DashBoard</Nav.Link>
                </>
              }
             

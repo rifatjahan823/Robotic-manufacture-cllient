@@ -15,7 +15,7 @@ const Order = () => {
     const {data:product,isLoading,refetch}=useQuery(('product'),()=> fetch(`http://localhost:5000/productid/${Id}`)
     .then(res=>res.json()));
 
-   const [user]=useAuthState(auth)
+   const [user]=useAuthState(auth);
     const[email,setEmail]=useState('');
     const[name,setName]=useState('');
     const[phone,setPhone]=useState('');
@@ -23,9 +23,6 @@ const Order = () => {
     const[quantiti,setQuantity]=useState('');
 
     let price = quantiti*product?.price;
-    //  const result=()=>{
-    //         toast('Thanks for buy');
-    //  }
     const handleName =(event)=>{
         setName(event.target.value)
     };
@@ -69,25 +66,25 @@ const Order = () => {
         })
     }
 
-//---------------upadate quantity----------------------------
-const updateDeliver =()=>{
-        const quantity = product.quantity-quantiti;
+// //---------------upadate quantity----------------------------
+// const updateDeliver =()=>{ 
+//         const quantity = product.quantity-quantiti;
   
-try{
-    const getdata = async ()=>{
-    const res =await axios.put(`http://localhost:5000/inventoryUpdate/${Id}`,
-      {quantity}
-      );
-    }
-    getdata()
-  }
+// try{
+//     const getdata = async ()=>{
+//     const res =await axios.put(`http://localhost:5000/inventoryUpdate/${Id}`,
+//       {quantity}
+//       );
+//     }
+//     getdata()
+//   }
 
-catch(error){
-       console.error('Error:', error);
-     };
+// catch(error){
+//        console.error('Error:', error);
+//      };
 
-     refetch()
-}
+//      refetch()
+// }
 
     if(isLoading){
         return<Loading></Loading>
@@ -122,7 +119,7 @@ catch(error){
         <p style={{color:"black",fontWeight: "600"}}><span style={{fontSize:"14px",fontWeight: "700",color:"#8b8b8b",lineHeight:"1.2"}}>MinimumOrder:</span> {product.minimumOrder}</p>
       } 
       <div className='border p-2'>
-        <Form onClick={updateDeliver} onSubmit={loginHandle}>
+        <Form onSubmit={loginHandle}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Name</Form.Label>
                 <Form.Control onChange={ handleName}type="name" readOnly placeholder="Name" value={user?.displayName}required/>
