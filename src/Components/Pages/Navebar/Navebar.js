@@ -82,7 +82,7 @@ const Navebar = () => {
                :
                <Link as={Link} to="/login">Login</Link>
              }
-               <Link as={Link} to="/register">Register</Link>
+               <Link as={Link} to="/signup">SignUp</Link>
                </div>
            
             </Navbar.Collapse>

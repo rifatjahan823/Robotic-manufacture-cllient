@@ -1,54 +1,63 @@
 import React from 'react';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Loading/Loading';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import './Login.css'
 import SocialLogin from '../SocialLogin/SocialLogin';
 
-const Login = () => {
-        //login
-        const [
-            signInWithEmailAndPassword,
-            user,
-            loading,
-            error,
-          ] = useSignInWithEmailAndPassword(auth); 
-      //for from
-      const navigate = useNavigate()
-      const { register, formState: { errors }, handleSubmit } = useForm();
-      const location = useLocation();
-      const from = location.state?.from?.pathname || "/";
-      // Submit your data into Redux store
-      const onSubmit = data =>{
-        console.log(data)
-        signInWithEmailAndPassword(data.email, data.password);
-      }; 
-    //   const [token]=useToken(user || guser)
-    //  useEffect(()=>{
-    //     if(token){
-    //         navigate(from, { replace: true });
-    //       }
-    //  },[token,from, navigate])
+const SignUp = () => {
+    //SignUp
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth);
+     //update user profile
+     const [updateProfile, updating, updateerror]=useUpdateProfile(auth);
+     const navigate = useNavigate();
     
-      if(loading){
-        return <Loading></Loading>
-      }
+    //  const [token]=useToken(user)
+
+  //for from
+  const { register, formState: { errors }, handleSubmit } = useForm();
+  // Submit your data into Redux store
+  const onSubmit =async data =>{
+    await createUserWithEmailAndPassword(data.email, data.password);
+    await updateProfile({ displayName:data.name });
+  }; 
+  if(loading ||updating){
+    return <Loading></Loading>
+  }  
+//   if(token){
+//     navigate('/appointment')
+// }
     return (
-        <div className='container'>
+<div className='container'>
             <div className='mx-auto form-container px-3'>
             <div className='d-flex align-items-center justify-content-center'>
             <div style={{height:"1px",backgroundColor:"black"}} className=' w-25'></div>
-            <h3 className='mx-2 mt-2'>Login</h3>
+            <h3 className='mx-2 mt-2'>SignUp</h3>
             <div style={{height:"1px",backgroundColor:"black"}} className='w-25'></div>
           </div>
-        {/* --------------form part-----------     */}
-             <form onSubmit={handleSubmit(onSubmit)}>    
+          <form onSubmit={handleSubmit(onSubmit)}>     
+        {/* ----------------Name--------------- */}
+            <div className="">
+            <label for="inputName" className="form-label">Name</label>
+            <input type="text" className="form-control" id="inputName" placeholder="name"{...register("name",{
+                    required:{
+                     value:true,
+                     message:'Please Give Name' 
+                     },
+                 })}/>
+               <label className="label">
+                 {errors.name?.type === 'required' && <span className="label-text-alt text-danger">{errors.name.message}</span>}
+                 </label>
+                 </div>    
+            {/* ----------------Email--------------- */}
                 <div className="">
-                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <label for="exampleFormControlInput1" className="form-label">Email address</label>
                 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"{...register("email", {
                     required:{
                        value:true,
@@ -82,20 +91,21 @@ const Login = () => {
                 {errors.password?.type === 'minLength' && <span className="label-text-alt text-danger">{errors.password.message}</span>}
                 </label>
                 </div>
-
-            {
-                error?.message  && <p className='text-danger'>{error.message}</p>
-            }
-
-            <input className='btn btn-primary mb-3' type="submit" vale="Login" />
-            </form>  
-
-            <p>New to here? <Link to="/register" className="text-danger pe-auto text-decoration-none">Please SignUp</Link></p>
-  
+ 
+             {
+                 error?.message  && <p className='text-danger'>{error.message}</p>
+             }
+             {
+                updateerror?.message  && <p className='text-red-500'>{updateerror.message}</p>
+             }
+ 
+             <input className='btn btn-primary mb-3' type="submit" vale="SignUp" />
+             </form>
+             <p>Already have an account? <Link to="/login" className="text-danger pe-auto text-decoration-none">Please Login</Link></p>
                 <SocialLogin></SocialLogin>    
           </div>
         </div>
     );
 };
 
-export default Login;
+export default SignUp;
