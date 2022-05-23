@@ -87,10 +87,10 @@ const Login = () => {
                 error?.message  && <p className='text-danger'>{error.message}</p>
             }
 
-            <input className='btn btn-primary mb-3' type="submit" vale="Login" />
+            <input className='common-button mb-3' type="submit" vale="Login" />
             </form>  
 
-            <p>New to here? <Link to="/register" className="text-danger pe-auto text-decoration-none">Please SignUp</Link></p>
+            <p>New to here? <Link to="/signup" className="text-danger pe-auto text-decoration-none">Please SignUp</Link></p>
   
                 <SocialLogin></SocialLogin>    
           </div>

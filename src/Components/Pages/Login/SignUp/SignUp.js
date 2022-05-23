@@ -99,7 +99,7 @@ const SignUp = () => {
                 updateerror?.message  && <p className='text-red-500'>{updateerror.message}</p>
              }
  
-             <input className='btn btn-primary mb-3' type="submit" vale="SignUp" />
+             <input className='common-button mb-3' type="submit" vale="SignUp" />
              </form>
              <p>Already have an account? <Link to="/login" className="text-danger pe-auto text-decoration-none">Please Login</Link></p>
                 <SocialLogin></SocialLogin>    
