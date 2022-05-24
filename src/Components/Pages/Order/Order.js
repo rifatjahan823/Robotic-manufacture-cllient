@@ -1,10 +1,9 @@
-import axios from 'axios';
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
@@ -65,26 +64,6 @@ const Order = () => {
         refetch()
         })
     }
-
-// //---------------upadate quantity----------------------------
-// const updateDeliver =()=>{ 
-//         const quantity = product.quantity-quantiti;
-  
-// try{
-//     const getdata = async ()=>{
-//     const res =await axios.put(`http://localhost:5000/inventoryUpdate/${Id}`,
-//       {quantity}
-//       );
-//     }
-//     getdata()
-//   }
-
-// catch(error){
-//        console.error('Error:', error);
-//      };
-
-//      refetch()
-// }
 
     if(isLoading){
         return<Loading></Loading>
@@ -156,8 +135,6 @@ const Order = () => {
             }
         </Form>
         </div>
-        <ToastContainer />
-
               
       {/*------ button-part ------------*/}
  
