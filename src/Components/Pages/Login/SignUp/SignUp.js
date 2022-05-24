@@ -20,7 +20,6 @@ const SignUp = () => {
      const navigate = useNavigate();
     
      const [token]=useTooken(user)
-
   //for from
   const { register, formState: { errors }, handleSubmit } = useForm();
   // Submit your data into Redux store
@@ -35,7 +34,7 @@ const SignUp = () => {
      navigate('/')
  }
     return (
-<div className='container'>
+        <div className='container'>
             <div className='mx-auto form-container px-3'>
             <div className='d-flex align-items-center justify-content-center'>
             <div style={{height:"1px",backgroundColor:"black"}} className=' w-25'></div>
@@ -100,11 +99,11 @@ const SignUp = () => {
                 updateerror?.message  && <p className='text-red-500'>{updateerror.message}</p>
              }
  
-             <input className='common-button mb-3' type="submit" vale="SignUp" />
+            <input className=' common-button mb-3' type="submit" value="SignUp" />
              </form>
              <p>Already have an account? <Link to="/login" className="text-danger pe-auto text-decoration-none">Please Login</Link></p>
                 <SocialLogin></SocialLogin>    
-          </div>
+            </div>
         </div>
     );
 };

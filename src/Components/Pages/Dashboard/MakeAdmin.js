@@ -21,7 +21,6 @@ const MakeAdmin = () => {
         <table class="table">
         <thead>
             <tr>
-            <th scope="col">#</th>
             <th scope="col">Email</th>
             <th scope="col">Admin</th>
             <th scope="col">Delete</th>

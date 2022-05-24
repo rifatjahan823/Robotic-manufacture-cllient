@@ -15,7 +15,7 @@ const Product = () => {
             <h2 className='product-title'>Product</h2>
             <div className='row g-4'>
                 {
-                products?.map(product=><GetProduct
+                products?.slice(0,6).map(product=><GetProduct
                 product={product}
                 key={product._id}>
                 </GetProduct>)   
