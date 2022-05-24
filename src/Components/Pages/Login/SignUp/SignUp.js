@@ -3,6 +3,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import useTooken from '../../../hooks/useTooken';
 import Loading from '../../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
@@ -18,7 +19,7 @@ const SignUp = () => {
      const [updateProfile, updating, updateerror]=useUpdateProfile(auth);
      const navigate = useNavigate();
     
-    //  const [token]=useToken(user)
+     const [token]=useTooken(user)
 
   //for from
   const { register, formState: { errors }, handleSubmit } = useForm();
@@ -30,9 +31,9 @@ const SignUp = () => {
   if(loading ||updating){
     return <Loading></Loading>
   }  
-//   if(token){
-//     navigate('/appointment')
-// }
+   if(token){
+     navigate('/')
+ }
     return (
 <div className='container'>
             <div className='mx-auto form-container px-3'>

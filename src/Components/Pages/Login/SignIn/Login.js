@@ -1,5 +1,5 @@
-import React from 'react';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import React, { useEffect } from 'react';
+import {  useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
@@ -8,6 +8,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Login.css'
 import SocialLogin from '../SocialLogin/SocialLogin';
+import useTooken from '../../../hooks/useTooken';
 
 const Login = () => {
         //login
@@ -27,16 +28,16 @@ const Login = () => {
         console.log(data)
         signInWithEmailAndPassword(data.email, data.password);
       }; 
-    //   const [token]=useToken(user || guser)
-    //  useEffect(()=>{
-    //     if(token){
-    //         navigate(from, { replace: true });
-    //       }
-    //  },[token,from, navigate])
-    
+       const [token]=useTooken(user)
+      useEffect(()=>{
+         if(token){
+             navigate(from, { replace: true });
+           }
+      },[token,from, navigate])
       if(loading){
         return <Loading></Loading>
       }
+    
     return (
         <div className='container'>
             <div className='mx-auto form-container px-3'>

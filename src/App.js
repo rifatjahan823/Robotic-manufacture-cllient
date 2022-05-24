@@ -9,8 +9,8 @@ import SignUp from './Components/Pages/Login/SignUp/SignUp';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
 import RequireAuth from './Components/Pages/RequireAuth/RequireAuth';
 import MyOrder from './Components/Pages/Dashboard/MyOrder';
-import Review from './Components/Pages/Dashboard/Review';
 import MyProfile from './Components/Pages/Dashboard/MyProfile';
+import Review from './Components/Pages/Dashboard/Review';
 
 function App() {
   return (
