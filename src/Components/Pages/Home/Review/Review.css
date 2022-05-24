@@ -25,3 +25,11 @@
     text-transform: capitalize;
     margin-bottom: 5%;
 }
+.review-style{
+    background-color: white;
+    color: black;
+    padding: 10px 5px;
+    width: 100%;
+    text-align: center;
+
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe,faEnvelope,faPhone} from '@fortawesome/free-solid-svg-icons';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { useAuthState} from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 import { Link } from 'react-router-dom';
@@ -76,7 +76,12 @@ const Navebar = () => {
                <div className='d-flex login'>
              {
                user?
-               <Link onClick={signout} as={Link} to="" >Sign Out </Link>
+               <>
+                  <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                  <Nav.Link style={{color:"black"}}  as={Link} to="">{user?.displayName}</Nav.Link>
+                  <Link style={{color:"black",marginLeft:"40px"}} onClick={signout} as={Link} to="" >Sign Out </Link>
+                </NavDropdown>
+               </>
                :
                <Link as={Link} to="/login">Login</Link>
              }

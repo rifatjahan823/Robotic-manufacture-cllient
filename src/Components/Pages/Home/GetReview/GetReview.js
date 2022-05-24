@@ -18,7 +18,7 @@ const GetReview = () => {
           <div className='container '>
           <h3>Testimonial</h3>
         <h2 className='text-center'>What Our Clients Say</h2>
-              <div >
+              <div className='row'>
               <Carousel itemsToShow={1}>
                   {
                   reviews?.map(review=><Review
