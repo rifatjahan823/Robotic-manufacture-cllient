@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
+import OrderRow from './OrderRow';
 
 const MyOrder = () => {
     const [user]=useAuthState(auth)
@@ -25,11 +26,11 @@ const MyOrder = () => {
            return res.json()
        })
          .then(data=>{
-           console.log('data',data)
            setOrder(data)
          })
         }
-     },[user])
+     },[user,order])
+
 
     return (
         <div className='container'>
@@ -46,24 +47,14 @@ const MyOrder = () => {
             </tr>
         </thead>
         <tbody>
+     
         {
-        order?.map((order,index)=><tr key={index}>
-            <th>{index+1}</th>
-            <td>{order.userName}</td>
-            <td>{order.date}</td>
-            <td>
-              {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}
-
-              {(order.price && order.paid) && <div>
-                <p><span className='text-successs'>Paid</span></p>
-                <p>TransactionId:<span className='text-successs'>{order.transactionId}</span></p>
-                </div>}
-              </td>
-              <td>
-              {(order.price && !order.paid) && <button   className='btn btn-xs btn-danger'>cancel</button>}
-              </td>
-          </tr>)  
-      }
+          order?.map((orders,)=><OrderRow
+          key={orders._id}
+          orders={orders}
+          ></OrderRow>)
+        }
+      
   </tbody>
         </table>
         </div>
