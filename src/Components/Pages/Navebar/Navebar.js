@@ -7,7 +7,8 @@ import { signOut } from 'firebase/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import logo from '../../image/navebar/logo.png'
-import logo2 from '../../image/navebar/logo-three.png'
+import logo2 from '../../image/navebar/logo-three.png';
+import { FaLinkedinIn,FaTwitter,FaFacebookF,FaPinterest,FaPhoneVolume,FaMapMarkerAlt,FaEnvelopeOpenText } from 'react-icons/fa';
 import './Navebar.css'
 import Loading from '../Loading/Loading';
 
@@ -22,34 +23,35 @@ const Navebar = () => {
  
     return (
         <>
-        <div className='top-navebar'>
+        <div className='top-navebar d-md-block d-none'>
          <div className=' container'>
               <div className='row align-items-center'>
-                  <div className='col-md-8'>
+                  <div className='col-lg-8 col-12'>
                       <div className='row align-items-center'>
-                          <div className='col-md-5'>
+                          <div className='col-lg-4 col-md-5'>
                               <p><FontAwesomeIcon icon={faGlobe} /> We work with global Industry</p>
                           </div>
-                          <div className='col-md-3'>
+                          <div className='col-lg-3 col-md-3'>
                              <p><FontAwesomeIcon icon={faEnvelope} /> hello@robtic.com</p> 
                           </div>
-                          <div className='col-md-4'>
+                          <div className='col-lg-5 col-md-4'>
                              <p><FontAwesomeIcon icon={faPhone} /> 882-658-506</p> 
                           </div>
                       </div>
                   </div>
-                  <div className='col-md-4'> 
-                      <div className='now'>
-                         <div className='col-md-3'>
-             
+                  <div className='col-lg-4 col-12'> 
+                      <div className='row justify-content-lg-end justify-content-md-start'>
+                         <div className='col-md-2'>
+                         <p className='nav-icon'><FaFacebookF /></p>
                          </div>
-                         <div className='col-md-3'>
-                     
+                         <div className='col-md-2'>
+                         <p className='nav-icon'><FaTwitter/></p>
                          </div>
-                         <div className='col-md-3'>
-
+                         <div className='col-md-2'>
+                         <p className='nav-icon'><FaPinterest /></p>
                          </div>
-                         <div className='col-md-3'>
+                         <div className='col-md-2'>
+                         <p className='nav-icon'><FaLinkedinIn /></p>
                          </div>
                       </div>
                   </div>

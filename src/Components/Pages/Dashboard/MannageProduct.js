@@ -14,7 +14,7 @@ const MannageProduct = () => {
      return<Loading></Loading>
  }
 return (
- <div className='container py-5'>
+ <div className=' py-5'>
 <div class="table-responsive">
       <table class="table">
       <thead>

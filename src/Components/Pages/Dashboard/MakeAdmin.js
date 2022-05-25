@@ -16,7 +16,7 @@ const MakeAdmin = () => {
              return<Loading></Loading>
          }  
     return (
-        <div className='container'>
+        <div className=''>
          <div class="table-responsive">
         <table class="table">
         <thead>

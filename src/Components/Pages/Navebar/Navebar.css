@@ -1,6 +1,23 @@
 .top-navebar{
     background-color: black;
     color:white;
+    padding: 10px 0;
+}
+.nav-icon{
+   margin-top: 5px;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: block;
+    cursor: pointer;
+    transition: 0.5s all ease;
+}
+.nav-icon:hover{
+    background-color: #FA5F0B;
 }
 /* main navebar */
 .bg {

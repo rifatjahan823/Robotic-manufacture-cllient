@@ -15,7 +15,7 @@ const AllOrder = () => {
 
 
     return (
-        <div className='container'>
+        <div className=''>
     <div class="table-responsive">
      <table class="table">
      <thead>

@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../../Loading/Loading';
 import GetProduct from './GetProduct/GetProduct';
+import './Product.css'
 
 const Product = () => {
         //use react query
@@ -12,7 +13,7 @@ const Product = () => {
         }
     return (
         <div className='container py-5'>
-            <h2 className='product-title'>Product</h2>
+            <h2 className='product-title'>Pro<span style={{color:'#FA5F0B'}}>duct</span></h2>
             <div className='row g-4'>
                 {
                 products?.slice(0,6).map(product=><GetProduct

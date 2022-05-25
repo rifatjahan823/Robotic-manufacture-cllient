@@ -25,7 +25,7 @@ const Paymens = () => {
         return <Loading></Loading>
     }
     return (
-        <div className='container'>
+        <div className=''>
             <div className='row'>
                 <div className='col-6 shadow p-3 mb-5 bg-body rounded mx-auto d-block '>
                     <div className='text-center'>

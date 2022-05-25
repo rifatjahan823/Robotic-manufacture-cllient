@@ -1,5 +1,7 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 const AdminRow = ({user,refetch}) => {
     const { email, role } = user;
     const makeAdmin = () => {

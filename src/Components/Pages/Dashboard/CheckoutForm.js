@@ -73,7 +73,7 @@ if(intentError){
 
    //store payment 
    const payment = {
-     appoinment:_id,
+     order:_id,
      transactionID:paymentIntent.id,
    }
    fetch(`http://localhost:5000/orderId/${_id}`,{
