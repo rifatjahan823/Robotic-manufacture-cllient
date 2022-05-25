@@ -4,7 +4,6 @@ import BussinessSummery from './BussinessSummery/BussinessSummery';
 import GetReview from './GetReview/GetReview';
 import LogoArea from './LogoArea/LogoArea';
 import Product from './Product/Product';
-import Review from './Review/Review';
 
 const Home = () => {
     return (

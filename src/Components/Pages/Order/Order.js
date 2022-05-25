@@ -43,6 +43,7 @@ const Order = () => {
         orderID:Id,
         userEmail:user.email,
         userName:user.displayName,
+        productName:product.name,
         phone,
         address,
         quantiti,
@@ -106,6 +107,10 @@ const Order = () => {
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email</Form.Label>
                 <Form.Control type="Email" readOnly placeholder="Email"value={user?.email}  required/>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Product Name</Form.Label>
+                <Form.Control value={product.name} readOnly type="text" placeholder="product name" required/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Phone Number</Form.Label>

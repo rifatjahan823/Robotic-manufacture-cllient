@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const OrderRow = ({orders}) => {
-    const {price,paid,transactionId,_id,userName}=orders;
+    const {price,paid,_id,productName,quantiti}=orders;
     //--------------delete---------
     const handleDelete = (Id)=>{
         Swal.fire({
@@ -37,17 +37,19 @@ const OrderRow = ({orders}) => {
         }
     return (
         <tr>
-         <td>{userName}</td>   
+         <td>{productName}</td>   
+         <td>{price}</td>   
+         <td>{quantiti}</td>   
         <td>
-          {(price && !paid) && <Link to={`/dashboard/payment/${_id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}
+          {(price && !paid) && <Link to={`/dashboard/payment/${_id}`}><button className='btn btn-success'>Pay</button></Link>}
 
           {(price && paid) && <div>
             <p><span className='text-successs'>Paid</span></p>
-            <p>TransactionId:<span className='text-successs'>{transactionId}</span></p>
             </div>}
           </td>
           <td>
-          {(price && !paid) && <button onClick={()=> handleDelete(_id)}  className='btn btn-xs btn-danger'>cancel</button>}
+          {(price && !paid) && <button onClick={()=> handleDelete(_id)}  className='btn btn-danger'>cancel</button>}
+          {(price && paid) && <button disabled onClick={()=> handleDelete(_id)}  className='btn btn-danger'>cancel</button>}
           </td>
         </tr> 
     );

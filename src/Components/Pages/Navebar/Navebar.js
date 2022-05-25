@@ -9,12 +9,17 @@ import auth from '../../firebase.init';
 import logo from '../../image/navebar/logo.png'
 import logo2 from '../../image/navebar/logo-three.png'
 import './Navebar.css'
+import Loading from '../Loading/Loading';
 
 const Navebar = () => {
-    const [user]=useAuthState(auth);
+    const [user, loading,]=useAuthState(auth);
+    if(loading){
+      return <Loading></Loading>
+    }
     const signout = () => {
       signOut(auth);
     };
+ 
     return (
         <>
         <div className='top-navebar'>
@@ -45,7 +50,6 @@ const Navebar = () => {
 
                          </div>
                          <div className='col-md-3'>
-
                          </div>
                       </div>
                   </div>
@@ -83,7 +87,9 @@ const Navebar = () => {
                 </NavDropdown>
                </>
                :
+               <>
                <Link as={Link} to="/login">Login</Link>
+               </>
              }
                <Link as={Link} to="/signup">SignUp</Link>
                </div>

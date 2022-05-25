@@ -34,16 +34,16 @@ const MyOrder = () => {
 
     return (
         <div className='container'>
-           <h2>Myorder{order.length}</h2> 
+           <h2 className='text-center'>{user.displayName}</h2> 
        <div class="table-responsive">
         <table class="table">
         <thead>
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantiy</th>
+            <th scope="col">Payment</th>
+            <th scope="col">Cancel</th>
             </tr>
         </thead>
         <tbody>
