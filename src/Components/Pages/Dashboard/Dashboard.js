@@ -29,7 +29,7 @@ const Dashboard = () => {
             <li><Link to="/dashboard">My Order</Link></li>
             <li><Link to="/dashboard/review">My Reviews</Link></li>
             <li><Link to="/dashboard/profile">My Profile</Link></li>
-            {admin && <><li><Link to="/dashboard/user">MakeAdmin</Link></li>  <li><Link to="/dashboard/addproduct ">AddProduct</Link></li>        <li><Link to="/dashboard/mannageproduct">MannageProduct</Link></li></>}
+            {admin && <><li><Link to="/dashboard/user">MakeAdmin</Link></li>  <li><Link to="/dashboard/addproduct ">AddProduct</Link></li> <li><Link to="/dashboard/mannageproduct">ManageProduct</Link></li> <li><Link to="/dashboard/allorder">Manage Order</Link></li></>}
         </Offcanvas.Body>
       </Offcanvas>
     </>

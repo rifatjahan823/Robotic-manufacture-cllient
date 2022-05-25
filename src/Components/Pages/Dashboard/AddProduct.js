@@ -141,13 +141,13 @@ const AddProduct = () => {
                  </div> 
             {/* ----------------Product Description-------------- */}
                 <div className="">
-                <label for="inputName" className="form-label">Product Desciption</label>
-                 <input type="text" className="form-control" id="inputName" placeholder="Product Desciption"{...register("productDesciption",{
+                <label for="floatingTextarea2">Product Desciption</label>
+                    <textarea class="form-control" placeholder="Leave a description here" id="floatingTextarea2" style={{height:"100px"}}{...register("productDesciption",{
                     required:{
                      value:true,
                      message:'Please give Product productDesciption' 
                      },
-                 })}/>
+                 })}></textarea>
                   <label className="label">
                  {errors.productDesciption?.type === 'required' && <span className="label-text-alt text-danger">{errors.productDesciption.message}</span>}
                  </label>

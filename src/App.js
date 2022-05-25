@@ -18,6 +18,7 @@ import MannageProduct from './Components/Pages/Dashboard/MannageProduct';
 import MakeAdmin from './Components/Pages/Dashboard/MakeAdmin';
 import RequireAdmin from './Components/Pages/RquireAdmin/RequireAdmin/RequireAdmin';
 import Paymens from './Components/Pages/Dashboard/Paymens';
+import AllOrder from './Components/Pages/Dashboard/AllOrder';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
       <Route path="addproduct"  element={<RequireAdmin><AddProduct/></RequireAdmin>}></Route>
       <Route path="mannageproduct"  element={<RequireAdmin><MannageProduct/></RequireAdmin>}></Route>
       <Route path="user"  element={<RequireAdmin><MakeAdmin/></RequireAdmin>}></Route>
+      <Route path="allorder"  element={<RequireAdmin><AllOrder/></RequireAdmin>}></Route>
       </Route >
 
       <Route path="/login" element={<Login />} />

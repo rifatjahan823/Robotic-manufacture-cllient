@@ -34,10 +34,21 @@ const Order = () => {
     const HandleQuantity=(event)=>{
         setQuantity(event.target.value)
     }
+    const handleQuantity=()=>{
+  
+        if(quantiti<product.minimumOrder){
+            toast.error(`Minumun Quantity Mustbe ${product.minimumOrder}`)
+        }
+        else if(quantiti>product.quantity){
+            toast.error(`Quantity can not be grater than ${product.quantity}`)
+        }
+    }
     //----------hadle-form----------------
     const loginHandle =event=>{
         event.preventDefault();
+
         const info={email,name,phone,address,quantiti,price};
+
        //----------for backed order information------------- 
        const order= {
         orderID:Id,
@@ -123,21 +134,15 @@ const Order = () => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Quantity</Form.Label>
-                <Form.Control onChange={ HandleQuantity}  type="number" placeholder="Quantity" min={product.minimumOrder} max={product.quantity}required/>
+                <Form.Control onChange={ HandleQuantity} min={product.minimumOrder} max={product.quantity} type="number" placeholder="Quantity" required/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Price</Form.Label>
                 <Form.Control  type="number" placeholder="price" readOnly value={price} required/>
             </Form.Group>
-             {quantiti<product.minimumOrder || quantiti>product.quantity?
-                <Button disabled className='w-75 mx-auto d-block mb-2' variant="success " type="submit">
+                <Button  onClick={handleQuantity} className='w-75 mx-auto d-block mb-2' variant="success " type="submit">
                 Check Out
                 </Button>
-                :
-                <Button  className='w-75 mx-auto d-block mb-2' variant="success " type="submit">
-                Check Out
-                </Button>
-            }
         </Form>
         </div>
               
