@@ -33,7 +33,7 @@ const Navebar = () => {
                               <p><FontAwesomeIcon icon={faGlobe} /> We work with global Industry</p>
                           </div>
                           <div className='col-lg-3 col-md-3'>
-                             <p><FontAwesomeIcon icon={faEnvelope} /> hello@robtic.com</p> 
+                             <p><FontAwesomeIcon icon={faEnvelope} /> hello @robtic.com</p> 
                           </div>
                           <div className='col-lg-5 col-md-4'>
                              <p><FontAwesomeIcon icon={faPhone} /> 882-658-506</p> 
@@ -85,10 +85,7 @@ const Navebar = () => {
              {
                user?
                <>
-                  <NavDropdown title="Profile" id="basic-nav-dropdown">
-                  <Nav.Link style={{color:"black"}}  as={Link} to="dashboard/profile">{user?.displayName}</Nav.Link>
-                  <Link style={{color:"black",marginLeft:"40px"}} onClick={signout} as={Link} to="" >Sign Out </Link>
-                </NavDropdown>
+                 <Link onClick={signout} as={Link} to="" >Sign Out </Link>
                </>
                :
                <>

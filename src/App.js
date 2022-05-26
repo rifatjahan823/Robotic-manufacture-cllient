@@ -22,6 +22,7 @@ import MyProfile from './Components/Pages/Dashboard/MyProfile';
 import MyPortfolio from './Components/Pages/MyPortfolio/MyPortfolio';
 import NotFound from './Components/Pages/NotFound/NotFound';
 import Blog from './Components/Pages/Blog/Blog';
+import Welcome from './Components/Pages/Dashboard/Welcome';
 
 
 function App() {
@@ -36,12 +37,13 @@ function App() {
       <Route path="/dashboard" element={<RequireAuth>
         <Dashboard/>
       </RequireAuth>}>
-      <Route index element={<MyOrder/>}></Route>
+      <Route index element={<Welcome/>} ></Route>
       <Route path="review"  element={<Review/>}></Route>
        <Route path="profile"  element={<MyProfile/>}></Route> 
       <Route path="payment/:id"  element={<Paymens/>}></Route>
+      <Route path="order" element={<MyOrder/>}></Route>
       <Route path="addproduct"  element={<RequireUser><AddProduct/></RequireUser>}></Route>
-      <Route path="mannageproduct"  element={<><MannageProduct/></>}></Route>
+      <Route path="mannageproduct"  element={<RequireUser><MannageProduct/></RequireUser>}></Route>
       <Route path="user"  element={<RequireUser><MakeAdmin/></RequireUser>}></Route>
       <Route path="allorder"  element={<RequireUser><AllOrder/></RequireUser>}></Route>
       </Route >
