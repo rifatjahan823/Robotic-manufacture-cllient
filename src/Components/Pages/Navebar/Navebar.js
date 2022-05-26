@@ -8,9 +8,10 @@ import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import logo from '../../image/navebar/logo.png'
 import logo2 from '../../image/navebar/logo-three.png';
-import { FaLinkedinIn,FaTwitter,FaFacebookF,FaPinterest,FaPhoneVolume,FaMapMarkerAlt,FaEnvelopeOpenText } from 'react-icons/fa';
+import { FaLinkedinIn,FaTwitter,FaFacebookF,FaPinterest, } from 'react-icons/fa';
 import './Navebar.css'
 import Loading from '../Loading/Loading';
+
 
 const Navebar = () => {
     const [user, loading,]=useAuthState(auth);
@@ -70,6 +71,7 @@ const Navebar = () => {
              <Nav className="mx-auto">
              <Nav.Link as={Link} to="/">Home</Nav.Link>
                <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
+               <Nav.Link as={Link} to="/portfolio">My Portfolio</Nav.Link>
                 {/* //jodi user thake */}
              {
                user && <>
@@ -83,8 +85,8 @@ const Navebar = () => {
              {
                user?
                <>
-                  <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                  <Nav.Link style={{color:"black"}}  as={Link} to="">{user?.displayName}</Nav.Link>
+                  <NavDropdown title="Profile" id="basic-nav-dropdown">
+                  <Nav.Link style={{color:"black"}}  as={Link} to="dashboard/profile">{user?.displayName}</Nav.Link>
                   <Link style={{color:"black",marginLeft:"40px"}} onClick={signout} as={Link} to="" >Sign Out </Link>
                 </NavDropdown>
                </>

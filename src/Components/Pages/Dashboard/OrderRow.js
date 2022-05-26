@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { ImBin } from "react-icons/im";
 
 const OrderRow = ({orders}) => {
     const {price,paid,_id,productName,quantiti}=orders;
@@ -48,8 +49,8 @@ const OrderRow = ({orders}) => {
             </div>}
           </td>
           <td>
-          {(price && !paid) && <button onClick={()=> handleDelete(_id)}  className='btn btn-danger'>cancel</button>}
-          {(price && paid) && <button disabled onClick={()=> handleDelete(_id)}  className='btn btn-danger'>cancel</button>}
+          {(price && !paid) && <button onClick={()=> handleDelete(_id)}  className='btn btn-danger'><ImBin/></button>}
+          {(price && paid) && <button disabled onClick={()=> handleDelete(_id)}  className='btn btn-danger'><ImBin/></button>}
           </td>
         </tr> 
     );

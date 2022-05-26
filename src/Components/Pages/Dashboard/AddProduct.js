@@ -57,7 +57,7 @@ const AddProduct = () => {
  
     return (
         <div>
-            <div className='mx-auto form-container px-3'>
+            <div className='mx-auto px-3'>
           <form onSubmit={handleSubmit(onSubmit)}>     
         {/* ----------------Name--------------- */}
             <div className="">

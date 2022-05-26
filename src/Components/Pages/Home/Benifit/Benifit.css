@@ -1,0 +1,33 @@
+.benifit-content{
+    background-color: #02111e;
+    padding: 40px 70px 50px 60px;
+    max-width: 905px;
+    margin-left: auto;
+    position: relative;
+    top: 100px;}
+
+.benifit-content h1{
+    font-weight: 600;
+font-size: 38px;
+color:white;
+text-transform: capitalize;
+}
+.benifit-content p{
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+   margin:30px 0;
+}
+.benifit-content h4{
+    margin-bottom:16px;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+
+}
+.benifit-icon{
+    font-size: 40px;
+    color: #FA5F0B;
+}

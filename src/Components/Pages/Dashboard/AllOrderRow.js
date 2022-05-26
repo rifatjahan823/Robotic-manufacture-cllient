@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { ImBin } from "react-icons/im";
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 
@@ -73,8 +73,8 @@ const AllOrderRow = ({order,refetch}) => {
             </div>}
           </td>
           <td>
-          {(price && !paid) && <button onClick={()=> handleDelete(_id)}   className='btn btn-danger'>cancel</button>}
-          {(price && paid) && <button disabled onClick={()=> handleDelete(_id)}  className='btn btn-danger'>cancel</button>}
+          {(price && !paid) && <button onClick={()=> handleDelete(_id)}   className='btn btn-danger'><ImBin /></button>}
+          {(price && paid) && <button disabled onClick={()=> handleDelete(_id)}  className='btn btn-danger'><ImBin /></button>}
           </td>
         </tr> 
     );

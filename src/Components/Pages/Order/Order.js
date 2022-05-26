@@ -13,7 +13,6 @@ const Order = () => {
     //use react query
     const {data:product,isLoading,refetch}=useQuery(('product'),()=> fetch(`http://localhost:5000/productid/${Id}`)
     .then(res=>res.json()));
-
    const [user]=useAuthState(auth);
     const[email,setEmail]=useState('');
     const[name,setName]=useState('');
@@ -140,7 +139,7 @@ const Order = () => {
                 <Form.Label>Price</Form.Label>
                 <Form.Control  type="number" placeholder="price" readOnly value={price} required/>
             </Form.Group>
-                <Button  onClick={handleQuantity} className='w-75 mx-auto d-block mb-2' variant="success " type="submit">
+                <Button  onClick={handleQuantity} className='w-75 mx-auto d-block mb-2 common-button'  type="submit">
                 Check Out
                 </Button>
         </Form>

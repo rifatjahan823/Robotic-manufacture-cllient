@@ -1,6 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
+import { ImBin } from "react-icons/im";
 
 const ProductsRow = ({product,refetch}) => {
     const {picture,name ,price,_id}=product;
@@ -45,7 +46,7 @@ const ProductsRow = ({product,refetch}) => {
         <td><img style={{width:"90px",height:"90px",borderRadius:"50px",border:"1px solid #CDCCCC"}} className='img-fluid' src={picture} alt="" /></td>
         <td>{name}</td>
         <td>{price}</td>
-        <td><button  onClick={()=> handleDelete(_id)} className="btn btn-danger">Remove User</button></td> 
+        <td><button  onClick={()=> handleDelete(_id)} className="btn btn-danger"><ImBin/></button></td> 
     </tr>
     );;
 };
