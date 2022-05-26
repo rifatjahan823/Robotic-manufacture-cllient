@@ -20,6 +20,8 @@ import RequireAuth from './Components/Pages/RequireAuth/RequireAuth';
 import RequireUser from './Components/Pages/RequireUsesr/RequireUser';
 import MyProfile from './Components/Pages/Dashboard/MyProfile';
 import MyPortfolio from './Components/Pages/MyPortfolio/MyPortfolio';
+import NotFound from './Components/Pages/NotFound/NotFound';
+import Blog from './Components/Pages/Blog/Blog';
 
 
 function App() {
@@ -30,6 +32,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/order/:Id" element={<RequireAuth><Order /></RequireAuth>} />
       <Route path="/portfolio" element={<MyPortfolio />} />
+      <Route path="/blog" element={<Blog />} />
       <Route path="/dashboard" element={<RequireAuth>
         <Dashboard/>
       </RequireAuth>}>
@@ -45,6 +48,7 @@ function App() {
 
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
+      <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer></Footer>
       <ToastContainer />

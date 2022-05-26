@@ -17,7 +17,7 @@ const OrderRow = ({orders}) => {
             confirmButtonText: 'Yes, delete it!'
           }).then((results) => {
           if (results.isConfirmed) {           
-    fetch(`http://localhost:5000/removeOrder/${Id}`,{
+    fetch(`https://vast-tor-95198.herokuapp.com/removeOrder/${Id}`,{
         method:"Delete",
         headers:{
             authorization:`Bearer ${localStorage.getItem('accessToken')}`
@@ -42,10 +42,10 @@ const OrderRow = ({orders}) => {
          <td>{price}</td>   
          <td>{quantiti}</td>   
         <td>
-          {(price && !paid) && <Link to={`/dashboard/payment/${_id}`}><button className='btn btn-success'>Pay</button></Link>}
+          {(price && !paid) && <Link to={`/dashboard/payment/${_id}`}><button className='btn btn-primary'>Pay</button></Link>}
 
           {(price && paid) && <div>
-            <p><span className='text-successs'>Paid</span></p>
+            <button disabled className='btn btn-primary'>Paid</button>
             </div>}
           </td>
           <td>

@@ -6,7 +6,7 @@ import AllOrderRow from './AllOrderRow';
 
 const AllOrder = () => {
          //use react query
-         const {data:orders,isLoading,refetch}=useQuery(('orders'),()=> fetch(`http://localhost:5000/orders`)
+         const {data:orders,isLoading,refetch}=useQuery(('orders'),()=> fetch(`https://vast-tor-95198.herokuapp.com/orders`)
          .then(res=>res.json()))
 
          if(isLoading){
@@ -16,8 +16,8 @@ const AllOrder = () => {
 
     return (
         <div className=''>
-    <div class="table-responsive">
-     <table class="table">
+    <div className="table-responsive">
+     <table className="table">
      <thead>
          <tr>
          <th scope="col">Product Name</th>

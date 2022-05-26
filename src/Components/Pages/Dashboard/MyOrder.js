@@ -11,7 +11,7 @@ const MyOrder = () => {
     const navigate = useNavigate();
     useEffect(()=>{
         if(user){
-         fetch(`http://localhost:5000/order?userEmail=${user.email}`,{
+         fetch(`https://vast-tor-95198.herokuapp.com/order?userEmail=${user.email}`,{
            method:"GET",
            headers:{
             'authorization':`Bearer ${localStorage.getItem('accessToken')}`
@@ -35,8 +35,8 @@ const MyOrder = () => {
     return (
         <div className=''>
            <h2 className='text-center'>{user?.displayName}</h2> 
-       <div class="table-responsive">
-        <table class="table">
+       <div className="table-responsive">
+        <table className="table">
         <thead>
             <tr>
             <th scope="col">Product Name</th>

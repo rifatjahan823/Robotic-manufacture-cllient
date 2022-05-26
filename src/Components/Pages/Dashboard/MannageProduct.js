@@ -7,7 +7,7 @@ import ProductsRow from './ProductsRow';
 const MannageProduct = () => {
 
  //use react query
- const {data:products,isLoading,refetch}=useQuery(('products'),()=> fetch(`http://localhost:5000/product`)
+ const {data:products,isLoading,refetch}=useQuery(('products'),()=> fetch(`https://vast-tor-95198.herokuapp.com/product`)
  .then(res=>res.json()));
 
  if(isLoading){
@@ -15,8 +15,8 @@ const MannageProduct = () => {
  }
 return (
  <div className=' py-5'>
-<div class="table-responsive">
-      <table class="table">
+<div className="table-responsive">
+      <table className="table">
       <thead>
           <tr>
           <th scope="col">Pcture</th>

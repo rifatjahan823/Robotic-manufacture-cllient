@@ -5,7 +5,7 @@ import AdminRow from './AdminRow';
 
 const MakeAdmin = () => {
           //use react query
-          const {data:users,isLoading,refetch}=useQuery(['available'],()=>  fetch(`http://localhost:5000/user`,{
+          const {data:users,isLoading,refetch}=useQuery(['available'],()=>  fetch(`https://vast-tor-95198.herokuapp.com/user`,{
             method:"GET",
             headers:{
                 authorization:`Bearer ${localStorage.getItem('accessToken')}`
@@ -17,8 +17,8 @@ const MakeAdmin = () => {
          }  
     return (
         <div className=''>
-         <div class="table-responsive">
-        <table class="table">
+         <div className="table-responsive">
+        <table className="table">
         <thead>
             <tr>
             <th scope="col">Email</th>

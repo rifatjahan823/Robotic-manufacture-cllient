@@ -13,7 +13,7 @@ const CheckoutForm = ({payments}) => {
     const {price,userEmail,userName,_id}=payments
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://vast-tor-95198.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
               'content-type': 'application/json',
@@ -76,7 +76,7 @@ if(intentError){
      order:_id,
      transactionID:paymentIntent.id,
    }
-   fetch(`http://localhost:5000/orderId/${_id}`,{
+   fetch(`https://vast-tor-95198.herokuapp.com/orderId/${_id}`,{
      method:"PATCH",
      headers: {
       'content-type': 'application/json',
@@ -112,7 +112,7 @@ if(intentError){
                    },
                  }}
                />
-               <button className='btn btn-success  mt-6' type="submit" disabled={!stripe ||!clientSecret || successerror}>
+               <button className='btn btn-primary mt-6' type="submit" disabled={!stripe ||!clientSecret || successerror}>
                  Pay
                </button>
              </form>
@@ -120,9 +120,9 @@ if(intentError){
                carderror && <p className='text-red-500'>{carderror}</p> 
              }       
              {
-                successerror && <div className='text-green-500'>
+                successerror && <div className=''>
                   <p>{successerror}  </p>
-                   <p>Your transaction Id: <span className="text-orange-500 font-bold">{transactionId}</span> </p>
+                   <p>Your transaction Id: <span className="font-bold">{transactionId}</span> </p>
                  </div>
              }       
                </>

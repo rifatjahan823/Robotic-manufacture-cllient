@@ -18,7 +18,7 @@ const AllOrderRow = ({order,refetch}) => {
             confirmButtonText: 'Yes, delete it!'
           }).then((results) => {
           if (results.isConfirmed) {           
-    fetch(`http://localhost:5000/removeOrder/${Id}`,{
+    fetch(`https://vast-tor-95198.herokuapp.com/removeOrder/${Id}`,{
         method:"Delete",
         headers:{
             authorization:`Bearer ${localStorage.getItem('accessToken')}`
@@ -39,7 +39,7 @@ const AllOrderRow = ({order,refetch}) => {
         }
 
         const makeCnange = () => {
-            fetch(`http://localhost:5000/changepaymnet`, {
+            fetch(`https://vast-tor-95198.herokuapp.com/changepaymnet`, {
                 method: 'PUT',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`

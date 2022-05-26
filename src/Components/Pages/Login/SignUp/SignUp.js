@@ -58,7 +58,7 @@ const SignUp = () => {
             {/* ----------------Email--------------- */}
                 <div className="">
                 <label for="exampleFormControlInput1" className="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"{...register("email", {
+                <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"{...register("email", {
                     required:{
                        value:true,
                        message:'Please Give Email' 
@@ -75,8 +75,8 @@ const SignUp = () => {
                 </div>
                 {/* ----------------password--------------- */}
                 <div className="">
-                <label for="inputPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password"{...register("password", {
+                <label for="inputPassword" className="form-label">Password</label>
+                <input type="password" className="form-control" id="inputPassword" placeholder="Password"{...register("password", {
                     required:{
                        value:true,
                        message:'Please Give password' 

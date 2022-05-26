@@ -35,7 +35,7 @@ const AddProduct = () => {
 
             }
             //send to your database
-            fetch('http://localhost:5000/addProduct',{
+            fetch('https://vast-tor-95198.herokuapp.com/addProduct',{
                 method:"POST",
                 headers:{
                     'content-type':"application/json",
@@ -68,7 +68,7 @@ const AddProduct = () => {
             {/* ----------------Email--------------- */}
                 <div className="">
                 <label for="exampleFormControlInput1" className="form-label">Email address</label>
-                <input type="email"value={user?.email} readOnly class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"{...register("email", {
+                <input type="email"value={user?.email} readOnly className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"{...register("email", {
                     
                 })}/>
                 </div>
@@ -142,7 +142,7 @@ const AddProduct = () => {
             {/* ----------------Product Description-------------- */}
                 <div className="">
                 <label for="floatingTextarea2">Product Desciption</label>
-                    <textarea class="form-control" placeholder="Leave a description here" id="floatingTextarea2" style={{height:"100px"}}{...register("productDesciption",{
+                    <textarea className="form-control" placeholder="Leave a description here" id="floatingTextarea2" style={{height:"100px"}}{...register("productDesciption",{
                     required:{
                      value:true,
                      message:'Please give Product productDesciption' 

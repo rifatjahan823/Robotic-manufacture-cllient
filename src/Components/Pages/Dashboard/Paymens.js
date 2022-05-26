@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_51L0e23Ca3QHIfeD9jH9tTOIpdBREDgbEafTED
 
 const Paymens = () => {
     const {id}=useParams();
-    const url =`http://localhost:5000/orderId/${id}`;
+    const url =`https://vast-tor-95198.herokuapp.com/orderId/${id}`;
     const {data:payments,isLoading}=useQuery(['payments',id],()=>fetch(url,{
         method:"GET",
         headers:{
@@ -29,9 +29,9 @@ const Paymens = () => {
             <div className='row'>
                 <div className='col-6 shadow p-3 mb-5 bg-body rounded mx-auto d-block '>
                     <div className='text-center'>
-                    <p className="text-success font-bold">Hello, {payments.userName}</p>
-                    <p className="text-success font-bold">Please pay for {payments.productName}</p>
-                    <p className="text-success font-bold">Please pay${payments.price}</p>
+                    <p className=" font-bold">Hello, {payments.userName}</p>
+                    <p className="font-bold">Please pay for {payments.productName}</p>
+                    <p className="font-bold">Please pay${payments.price}</p>
                     </div>
                 </div>
             </div>

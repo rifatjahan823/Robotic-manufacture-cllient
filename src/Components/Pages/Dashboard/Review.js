@@ -31,7 +31,7 @@ const Review = () => {
 
             }
             //send to your database
-            fetch('http://localhost:5000/review',{
+            fetch('https://vast-tor-95198.herokuapp.com/review',{
                 method:"POST",
                 headers:{
                     'content-type':'application/json'
@@ -48,7 +48,7 @@ const Review = () => {
 
     return (
         <div>
-        <div className='mx-auto form-container px-3'>
+        <div className='mx-auto px-3'>
            <h2>Add Your Review</h2>
            <form onSubmit={handleSubmit(onSubmit)}>     
         {/* ----------------Name--------------- */}
@@ -89,7 +89,7 @@ const Review = () => {
             {/* ----------------Product Description-------------- */}
                 <div className="">
                 <label for="floatingTextarea2">Product Desciption</label>
-                    <textarea class="form-control" placeholder="Leave a description here" id="floatingTextarea2" style={{height:"100px"}}{...register("productDesciption",{
+                    <textarea className="form-control" placeholder="Leave a description here" id="floatingTextarea2" style={{height:"100px"}}{...register("productDesciption",{
                     required:{
                      value:true,
                      message:'Please give Product productDesciption' 

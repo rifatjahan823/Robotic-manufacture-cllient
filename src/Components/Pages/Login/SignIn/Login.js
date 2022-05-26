@@ -49,8 +49,8 @@ const Login = () => {
         {/* --------------form part-----------     */}
              <form onSubmit={handleSubmit(onSubmit)}>    
                 <div className="">
-                <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"{...register("email", {
+                <label for="exampleFormControlInput1" className="form-label">Email address</label>
+                <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"{...register("email", {
                     required:{
                        value:true,
                        message:'Please Give Email' 
@@ -67,8 +67,8 @@ const Login = () => {
                 </div>
                 {/* ----------------password--------------- */}
                 <div className="">
-                <label for="inputPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password"{...register("password", {
+                <label for="inputPassword" className="form-label">Password</label>
+                <input type="password" className="form-control" id="inputPassword" placeholder="Password"{...register("password", {
                     required:{
                        value:true,
                        message:'Please Give password' 
