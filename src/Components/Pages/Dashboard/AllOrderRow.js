@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ImBin } from "react-icons/im";
+import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
+import Loading from '../Loading/Loading';
 
 const AllOrderRow = ({order,refetch}) => {
     const {price,paid,_id,productName,quantiti}=order;
-
-     //--------------delete---------
+  
+    //--------------delete---------
      const handleDelete = (Id)=>{
         Swal.fire({
             title: 'Are you sure?',
@@ -38,25 +40,7 @@ const AllOrderRow = ({order,refetch}) => {
       
         }
 
-        const makeCnange = () => {
-            fetch(`https://vast-tor-95198.herokuapp.com/changepaymnet`, {
-                method: 'PUT',
-                headers: {
-                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                }
-            })
-                .then(res => {
-                    if(res.status === 403){
-                        toast.error('Failed to Make an admin');
-                    }
-                    return res.json()})
-                .then(data => {
-              if(data.modifiedCount>0){
-                toast.success('Successfully Make an admin');
-                refetch();
-              }
-                })
-            }
+   
 
    
     return (
@@ -68,8 +52,9 @@ const AllOrderRow = ({order,refetch}) => {
           {(price && !paid)&& <div>
            <button  className='btn btn-primary'>unpaid</button>
             </div>}
-          {(price && paid) && <div>
-           <button onClick={makeCnange} className='btn btn-primary'>painding</button>
+          {
+          (price && paid) && <div>
+           <button className='btn btn-primary'>painding </button>
             </div>}
           </td>
           <td>

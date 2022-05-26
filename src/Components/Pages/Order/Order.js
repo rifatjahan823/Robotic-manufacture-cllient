@@ -20,6 +20,7 @@ const Order = () => {
     const[address,setAddress]=useState('');
     const[quantiti,setQuantity]=useState('');
 
+
     let price = quantiti*product?.price;
     const handleName =(event)=>{
         setName(event.target.value)
@@ -37,9 +38,11 @@ const Order = () => {
   
         if(quantiti<product.minimumOrder){
             toast.error(`Minumun Quantity Mustbe ${product.minimumOrder}`)
+     
         }
         else if(quantiti>product.quantity){
-            toast.error(`Quantity can not be grater than ${product.quantity}`)
+            toast.error(`Quantity can not be grater than ${product.quantity}`);
+
         }
     }
     //----------hadle-form----------------
