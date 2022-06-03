@@ -6,7 +6,6 @@ const useTooken = (user) => {
         const email = user?.user?.email;
         console.log('Email',email)
         const currentUser ={email:email}
-        console.log(currentUser)
         if(email){
             fetch(`https://vast-tor-95198.herokuapp.com/user/${email}`,{
                 method:"PUT",

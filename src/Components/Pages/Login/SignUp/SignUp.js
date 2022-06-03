@@ -20,10 +20,12 @@ const SignUp = () => {
      const navigate = useNavigate();
     
      const [token]=useTooken(user)
+
   //for from
   const { register, formState: { errors }, handleSubmit } = useForm();
   // Submit your data into Redux store
   const onSubmit =async data =>{
+    console.log(data.name)
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName:data.name });
   }; 

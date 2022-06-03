@@ -37,6 +37,20 @@ you need to make sure that components receive only necessary props.Detecting unn
   <Accordion.Item eventKey="4">
     <Accordion.Header> You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</Accordion.Header>
     <Accordion.Body>
+
+<p>
+    const dress = 
+   name: 'earring', price: 33, description: 'valuable ' 
+   name: 'show', price: 13, description: 'valuable ' 
+   name: 'babaydress', price: 53, description: 'valuable  
+   name: 'ring', price: 73, description: 'valuable' 
+
+function getProduct(mobiles, keyword) 
+   (const mobile of mobiles) 
+     (dress.name === keyword) 
+      return mobile;
+  console.log(getProduct(dress, 'earring'))
+</p>
    <p>One can use filter() function in JavaScript to filter the object array based on attributes. The filter() function will return a new array containing all the array elements that pass the given condition. If no elements pass the condition it returns an empty array.</p>
     </Accordion.Body>
   </Accordion.Item>

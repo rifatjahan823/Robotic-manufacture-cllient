@@ -12,8 +12,8 @@ const Banner = () => {
         <div className='container'>
             <div className='row g-4 align-items-center'>
                 <div className='col-12 col-md-8 '>
-                    <h1>We Are The Best Robotic Maker Industry </h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendis</p>
+                    <h1>Welcome Our Biggest Robotic Manufacture World </h1>
+                    <p>Welcome Our Customer.We are always here For your services and we always provide unique and supper extra ordinary Robotic accessories</p>
                     <button className='common-button'>
                      discover More <FontAwesomeIcon icon={faAngleDoubleRight} />
                     </button> 

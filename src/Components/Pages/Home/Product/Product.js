@@ -12,6 +12,7 @@ const Product = () => {
             return<Loading></Loading>
         }
     return (
+        <div style={{backgroundColor:"#F6F6F6"}}>
         <div className='container py-5'>
             <h2 className='product-title'>Pro<span style={{color:'#FA5F0B'}}>duct</span></h2>
             <div className='row g-4'>
@@ -22,6 +23,7 @@ const Product = () => {
                 </GetProduct>)   
                 }
             </div>    
+        </div>
         </div>
     );
 };

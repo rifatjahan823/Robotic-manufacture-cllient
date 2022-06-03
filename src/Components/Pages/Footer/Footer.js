@@ -16,7 +16,7 @@ const Footer = () => {
                     <div className='row g-4 align-items-start'>
                         <div className='col-12 col-lg-3 col-md-6'>
                             <img className='img-fluid' src={footerlogo} alt="" />
-                            <p className='py-3'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p className='py-3'>Our robotic Manufacture always try to give our customers unique and high quality product.we always provide our best service </p>
                             <div className='footer-icon d-flex justify-content-between'>
                                 <p className='icon'><FaFacebookF /></p>
                                 <p className='icon'><FaTwitter/></p>

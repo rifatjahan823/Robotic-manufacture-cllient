@@ -1,31 +1,23 @@
-.benifit-content{
-    background-color: #02111e;
-    padding: 40px 70px 50px 60px;
-    max-width: 905px;
-    margin-left: auto;
-    position: relative;
-    top: 100px;}
-
-.benifit-content h1{
-    font-weight: 600;
+.benifit-content h2{
+ font-weight: 700;
 font-size: 38px;
-color:white;
+color: #282828;
 text-transform: capitalize;
+margin-bottom: 30px;
 }
 .benifit-content p{
-    color: white;
+    color: #4e4e4e;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.8;
-   margin:30px 0;
+   margin-bottom: 25px;
 }
 .benifit-content h4{
-    margin-bottom:22px;
-    color: #ffffff;
     font-family: "Roboto", sans-serif;
-    font-weight: 500;
+    font-weight:600;
     font-size: 18px;
-
+    color: #282828;
+    margin-bottom: 25px;
 }
 .benifit-icon{
     font-size: 40px;
